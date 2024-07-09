@@ -6,6 +6,9 @@ import { defineConfig, type ViteDevServer } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  define: {
+    'process.env': process.env,
+  },
   build: { manifest: true },
   plugins: [
     morganPlugin(),
