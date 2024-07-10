@@ -48,7 +48,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
-  const data = useLoaderData<typeof loader>()
+  const data = useRouteLoaderData<typeof loader>('root')
   const [theme] = useTheme()
 
   return (
@@ -65,7 +65,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       >
         {children}
         <ScrollRestoration />
-        <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(data?.theme)} />
         <Scripts />
       </body>
     </html>

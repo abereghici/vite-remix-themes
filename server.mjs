@@ -58,7 +58,7 @@ app.all(
   }),
 )
 
-const port = 3000
+const port = 3001
 app.listen(port, '0.0.0.0', () => {
   if (process.env.NODE_ENV === 'production') {
     console.log('http://localhost:' + port)
